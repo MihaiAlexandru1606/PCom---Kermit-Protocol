@@ -4,11 +4,13 @@ SPEED=10
 DELAY=10
 LOSS=5
 CORRUPT=20
-FILES=(file1.bin file2.bin file3.bin)
+FILES=(files/file1.bin files/file2.bin files/file3.bin)
 
 killall link
 killall kreceiver
 killall ksender
+
+mv files src/files
 
 cd ./src
 cd ./link_emulator
@@ -36,6 +38,7 @@ do
 done
 echo "==========================="
 
+rm -fr files
 
 cd ./link_emulator
 make clean
